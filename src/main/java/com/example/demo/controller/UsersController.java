@@ -34,50 +34,59 @@ public class UsersController {
 			System.out.println(user.getEmail() + "User already existed");
 
 		}
-		return "home";
+		return "login";
 
-		// System.out.println(user.getUsername()+" "+user.getEmail()+"
-		// "+user.getPassword()+" "+user.getGender()+" "+user.getRole()+"
-		// "+user.getAddress());
-
+		
 	}
 
 	@PostMapping("/validate")
-	public String validate(@RequestParam String email, @RequestParam String password, Model model) {
+	public String validate(@RequestParam String email, @RequestParam String password, HttpSession session,
+			Model model) {
 
 		if (service.validateUser(email, password) == true) {
 			String role = service.getRole(email);
+			session.setAttribute("email", email);
 
 			if (role.equals("admin")) {
 				return "adminHome";
 			} else {
-				Users user=service.getUser(email);
-				if(user.isPrimium()) {
-					List<Song> songList=songService.fetchAllSongs();
-					model.addAttribute("songs", songList);
-					return "displaySong";
-				}
-				
+				Users user = service.getUser(email);
+				// if(user.isPrimium()) {
+
+				// model.addAttribute("songs", songList);
+				// return "displaySong";
+				boolean userStatus1 = user.isPrimium();
+				List<Song> songList = songService.fetchAllSongs();
+				model.addAttribute("songs", songList);
+				model.addAttribute("isPrimium", userStatus1);
 				return "customerHome";
 			}
 
 		} else {
-			
+
 			return "login";
 		}
 	}
 
-	
-	
-
-	
-	
 	@GetMapping("/logout")
 	public String logout(HttpSession session) {
 		session.invalidate();
-		
-		return  "login";
+
+		return "login";
 	}
 	
 	
+	@PostMapping("/resetPassword")
+	public String resetPassword(@RequestParam String email, @RequestParam String newPassword , Model model) {
+			boolean emailExists=service.existEmail(email);
+			if(emailExists) {
+				Users user=service.getUser(email);
+				user.setPassword(newPassword);
+				service.updateUser(user);
+				return "login";
+			}
+		return "resetPassword";
+	}
+	
+
 }

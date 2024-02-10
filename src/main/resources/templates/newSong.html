@@ -2,52 +2,50 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 20px;
-    }
-
-    label {
-        display: block;
-        margin-bottom: 5px;
-    }
-
-    input[type="text"], input[type="submit"] {
-        padding: 8px;
-        margin-bottom: 10px;
-        width: 300px;
-        border-radius: 5px;
-        border: 1px solid #ccc;
-    }
-
-    input[type="submit"] {
-        background-color: #007bff;
-        color: white;
-        cursor: pointer;
-    }
-
-    input[type="submit"]:hover {
-        background-color: #0056b3;
-    }
-</style>
+<title>Add Song</title>
+<link rel="stylesheet" th:href="@{/css/newSong.css}">
+<link rel="icon" href="https://i1.sndcdn.com/avatars-000923204566-t9r1ap-t240x240.jpg" type="image/x-icon">
 </head>
 <body>
+<header class="container">
+         <div class="page-header">
+            <div class="logo">
+                <a href="index">TuneHub</a>
+            </div>
+            
+            <ul>
+                <li><a href="adminHome" class="active" >🏠Home</a></li>
+                 <li><a href="logout" > Logout</a></li>
+            </ul>
+        </div>
+</header>
+<div class="container1">
+<div class="sidebar">
+            
+            <a href="adminHome">🏠Home</a>
+            <a href="viewSong">👀 View Songs</a>
+        <a href="viewPlaylist">📜 View Playlists</a>
+        <a href="newSong" class="active">➕ Add a Song</a>
+        <a href="createPlaylist">🎧 Create a Playlist</a>
+        </div>
+
+
     <form action="addSong" method="post">
-        <label for="songName">Song Name:</label>
-        <input type="text" id="songName" name="name"/>
+        <label for="songName">Song Name:</label><br/>
+        <input type="text" id="songName" name="name"/><br/>
 
-        <label for="songArtist">Song Artist:</label>
-        <input type="text" id="songArtist" name="artist"/>
+        <label for="songArtist">Song Artist:</label><br/>
+        <input type="text" id="songArtist" name="artist"/><br/>
 
-        <label for="songGenre">Song Genre:</label>
-        <input type="text" id="songGenre" name="genre"/>
+        <label for="songGenre">Song Genre:</label><br/>
+        <input type="text" id="songGenre" name="genre"/><br/>
 
-        <label for="songLink">Song Link:</label>
-        <input type="text" id="songLink" name="link"/>
+        <label for="songLink">Song Link:</label><br/>
+        <input type="text" id="songLink" name="link"/><br/>
 
-        <input type="submit" value="ADD SONG">
+        <input type="submit" value="ADD SONG"><br/>
     </form>
+    </div>
+    
 </body>
 </html>

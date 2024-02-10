@@ -1,47 +1,55 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>Register</title>
+    <meta charset="ISO-8859-1">
+    <title>Register</title>
+    <link rel="stylesheet" th:href="@{/css/register.css}">
 </head>
 <body>
-  <form action="register" method="post">
-    <table>
-      <tr>
-        <td><label>User Name :</label></td>
-        <td><input type="text" name="username"></td>
-      </tr>
-      <tr>
-        <td><label>Email :</label></td>
-        <td><input type="email" name="email"></td>
-      </tr>
-      <tr>
-        <td><label>Password :</label></td>
-        <td><input type="password" name="password"></td>
-      </tr>
-      <tr>
-        <td><label>Gender :</label></td>
-        <td>
-          <input type="radio" name="gender" value="male"> <label>Male</label>
-          <input type="radio" name="gender" value="female"> <label>Female</label>
-          <input type="radio" name="gender" value="others"> <label>Others</label>
-        </td>
-      </tr>
-      <tr>
-        <td><label>Role :</label></td>
-        <td>
-          <input type="radio" name="role" value="admin"> <label>Admin</label>
-          <input type="radio" name="role" value="customer"> <label>Customer</label>
-        </td>
-      </tr>
-      <tr>
-        <td><label>Address :</label></td>
-        <td><textarea rows="5" cols="20" name="address"></textarea></td>
-      </tr>
-      <tr>
-        <td colspan="2"><input type="submit" value="Register"></td>
-      </tr>
-    </table>
-  </form>
+<header class="container">
+         <div class="page-header">
+            <div class="logo">
+                <a href="index">TuneHub</a>
+            </div>
+            
+            <ul>
+                <li><a href="index" class="active" >Home</a></li>
+                 <li><a href="login" > Login</a></li>
+            </ul>
+        </div>
+</header>
+ <div class="container1">
+  
+    <form action="register" method="post">
+        <h1> Register </h1> 
+    
+        <label>Username :</label>
+        <input type="text" name="username"><br><br>
+
+        <label>User mail :</label>
+        <input type="email" name="email"><br><br>
+
+        <label>Password :</label>
+        <input type="password" name="password"><br><br>
+
+        <label>Gender :</label>
+        <input type="radio" name="gender" value="male"><label>Male</label>
+        <input type="radio" name="gender" value="female"><label>Female</label>
+        <input type="radio" name="gender" value="others"><label>Other</label><br><br>
+
+        <label>Role :</label>
+        <input type="radio" name="role" value="admin"><label>Admin</label>
+        <input type="radio" name="role" value="customer"><label>Customer</label><br><br>
+
+        <label>Address :</label>
+        <textarea rows="3" cols="36" name="address"></textarea><br><br>
+           
+        <button>Register</button>
+        
+        <p>Already have an Account - <a href="/login">Login</a> </p>
+        
+    </form>
+</div>
+
 </body>
 </html>

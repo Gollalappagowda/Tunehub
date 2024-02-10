@@ -27,7 +27,7 @@ public class SongController {
 		} else {
 			System.out.println("Song " + song.getName() + " is already existed");
 		}
-		return "home";
+		return "adminHome";
 	}
 
 	@GetMapping("/viewSong")

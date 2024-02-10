@@ -1,0 +1,122 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: hsl(309.07deg 62.32% 27.06%);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    overflow: hidden;
+}
+
+.logo a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 24px;
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+    margin-right: 20px;
+}
+
+ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.active {
+    font-weight: bold;
+}
+
+.container {
+    width: 70%;
+    background: hsl(309.07deg 62.32% 27.06%);
+    color: #fff;
+    padding: 10px 0;
+    border-radius: 1rem; /* Updated from 10rem to 1rem for a more reasonable value */
+}
+
+/* Sidebar */
+.sidebar {
+    width: 15%;
+    background: hsl(309.07deg 62.32% 27.06%);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.sidebar a {
+    display: block;
+    padding: 10px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #333;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.sidebar a:hover {
+    background: hsl(309.07deg 62.32% 27.06%);
+    color: white;
+}
+
+.sidebar .active {
+    color: black;
+    background-color: white;
+}
+
+/* Section */
+section {
+    margin: auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Song Card */
+.song-card {
+    background-image: url(https://dm0qx8t0i9gc9.cloudfront.net/thumbnails/video/QIAQ9Rd/white-music-background_njs6jzi3_thumbnail-1080_01.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 5px black;
+    margin: auto;
+}
+
+.song-card::after {
+    content: "";
+    width: 350px;
+}
+
+/* Audio Controls */
+audio::-webkit-media-controls-panel {
+    background-color: #eaeff0;
+}
+
+audio::-webkit-media-controls-play-button {
+    color: black;
+}
+
+audio::-webkit-media-controls-volume-slider {
+    color: black;
+}

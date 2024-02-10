@@ -1,29 +1,51 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-<style>
-body {
-background:linear-gradient(to right,red,yellow);
-
-		
-}
-</style>
-
-
+<meta charset="ISO-8859-1">
+<title>Admin Home</title>
+<link rel="stylesheet" th:href="@{/css/adminhome.css}">
+<link rel="icon" href="https://i1.sndcdn.com/avatars-000923204566-t9r1ap-t240x240.jpg" type="image/x-icon">
 
 </head>
 <body>
-	<h3>Welcome to admin home</h3>
+     <header class="container">
+         <div class="page-header">
+            <div class="logo">
+                <a href="index">TuneHub</a>
+            </div>
+            
+            <ul>
+                <li><a href="#" class="active" >🏠Home</a></li>
+                 <li><a href="logout" > Logout</a></li>
+            </ul>
+        </div>
+    </header>
+    
+<h3>Admin Home</h3>
 
-	<a href="newSong">Add New Song</a>
-	<br>
-	<a href="viewSong">View All Songs</a>
-	<br>
-	<a href="createPlaylist">Create Playlist</a>
-	<br>
-	<a href="viewPlaylist">View playlist</a>
+<div class="container1"> 
 
+
+<div class="sidebar">
+            
+            <a href="index" class="active">🏠Home</a>
+            <a href="viewSong">👀 View Songs</a>
+        <a href="viewPlaylist">📜 View Playlists</a>
+        <a href="newSong">➕ Add a Song</a>
+        <a href="createPlaylist">🎧 Create a Playlist</a>
+        </div>
+    <div class="admin">
+    <h1>🎵 TuneHub Admin's Symphony 🎵</h1>
+    <p>Greetings, Maestro! You wield the baton, conducting the expansive musical ensemble of TuneHub. Your guidance shapes the rhythmic cadence and harmonious melody of our platform. Let's weave enchantment together! 🎻</p>
+
+    <h2>📰 Recent Loudening 📰</h2>
+    <p>Our music library is a living, breathing entity, constantly evolving with new additions. Stay in rhythm with the latest harmonies and melodies that have been woven into our collection. 🎹</p>
+
+    <h2>🌟 Featured Compositions 🌟</h2>
+    <p>Every day, new stars are born on TuneHub. Discover the latest chart-toppers and crowd favorites that have been added to our platform. Who knows, you might find your next earworm here! 🎷</p>
+
+    
+</div>
+</div>
 </body>
 </html>

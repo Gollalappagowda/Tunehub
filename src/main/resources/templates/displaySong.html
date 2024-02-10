@@ -1,66 +1,50 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Song Table</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
+    <title>View Songs</title>
+    <link rel="stylesheet" th:href="@{/css/displaySong.css}">
+<link rel="icon" href="https://i1.sndcdn.com/avatars-000923204566-t9r1ap-t240x240.jpg" type="image/x-icon">
 
-        h2 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        table {
-            width: 80%;
-            margin: 20px auto;
-            border-collapse: collapse;
-        }
-
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
-
-        th {
-            background-color: #f2f2f2;
-        }
-
-        audio {
-            width: 100%;
-        }
-    </style>
 </head>
 <body>
+<header class="container">
+         <div class="page-header">
+            <div class="logo">
+                <a href="index">TuneHub</a>
+            </div>
+            
+            <ul>
+                <li><a href="adminHome" class="active" >🏠Home</a></li>
+                 <li><a href="logout" > Logout</a></li>
+            </ul>
+        </div>
+</header>
+<section >
+    <div class="sidebar">
+            
+            <a href="adminHome">🏠Home</a>
+            <a href="viewSong" class="active">👀 View Songs</a>
+        <a href="viewPlaylist">📜 View Playlists</a>
+        <a href="newSong">➕ Add a Song</a>
+        <a href="createPlaylist">🎧 Create a Playlist</a>
+        </div>
+    <div class="container1">
+        <div class="song-list" th:each="song : ${songs}">
+            <div class="song-card">
+                <h2 class="song-name" th:text="${song.name}"></h2>
+                <p class="song-artist" th:text="${song.artist}"></p>
+                <p class="song-genre" th:text="${song.genre}"></p>
+                <div class="song-player">
+                    <audio controls>
+                        <source th:src="${song.link}" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-<h2>Song Table</h2>
-
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Artist</th>
-            <th>Genre</th>
-            <th>Play</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr th:each="song : ${songs}">
-            <td th:text="${song.name}"></td>
-            <td th:text="${song.artist}"></td>
-            <td th:text="${song.genre}"></td>
-            <td>
-                <audio controls>
-                    <source th:src="${song.link}" type="audio/mp3">
-                </audio>
-            </td>
-        </tr>
-    </tbody>
-</table>
 
 </body>
 </html>

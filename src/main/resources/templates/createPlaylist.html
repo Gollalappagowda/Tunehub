@@ -1,25 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="www.thymleaf.org">
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
+    <meta charset="ISO-8859-1">
+    <title>TuneHub</title>
+        <link rel="stylesheet" th:href="@{/css/common.css}">
+    <link rel="stylesheet" th:href="@{/css/createPlaylist.css}">
+    <link rel="icon" href="https://i1.sndcdn.com/avatars-000923204566-t9r1ap-t240x240.jpg" type="image/x-icon">
+    
 </head>
-<body>
-<form action="addPlaylist">
-<h1>createPlaylist</h1>
-<label>PLay List Name :</label>
-<input type="text" name="name" />
-<h3>Select your songs to add playlist</h3>
-<div th:each="song:${songs}">
-
-
-<input type="checkbox" th:name="songs" th:value="${song.id}"/>
-<label th:text="${song.name}"></label>
-
-</div>
-<input type="submit" value="Add PlayList">
-
-</form>
-
-</body>
+<body> 
+<header class="container">
+         <div class="page-header">
+            <div class="logo">
+                <a href="index">TuneHub</a>
+            </div>
+            
+            <ul>
+                <li><a href="adminHome" class="active" >🏠Home</a></li>
+                 <li><a href="logout" > Logout</a></li>
+            </ul>
+        </div>
+</header>
+    <div class="container1">
+    <div class="sidebar">
+          
+            <a href="adminHome">🏠Home</a>
+            <a href="viewSong">👀 View Songs</a>
+        <a href="viewPlaylist">📜 View Playlists</a>
+        <a href="newSong">➕ Add a Song</a>
+        <a href="createPlaylist" class="active">🎧 Create a Playlist</a>
+        </div>
+    <div class="admin">
+         <form action="addPlaylist">
+               <h1>Create Playlist</h1>
+               <label style="font-weight:bold; " >Playlist name:</label><br>
+               <input type="text" name="name"/><br><br>
+               <label style="font-size:25px; color:black; font-weight: bold;">Select the songs :</label><br>
+               <div class="songs" th:each="song:${songs}">
+                   <input type="checkbox" th:name="songs" th:value="${song.id}">
+                   <label th:text="${song.name}"></label>
+               </div>
+               <br>
+               <input type="submit" value="Add Playlist">
+         </form>
+    </div>
+    </div>
+    </body>
 </html>

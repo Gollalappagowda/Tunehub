@@ -1,14 +1,54 @@
 <!DOCTYPE html>
-<html>
+<html >
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>TuneHub</title>
+<link rel="stylesheet" th:href="@{/css/customerHome.css}">
+<link rel="icon" href="https://i1.sndcdn.com/avatars-000923204566-t9r1ap-t240x240.jpg" type="image/x-icon">
+
 </head>
 <body>
-<h2>customer home</h2>
-<a href="pay"> Get Premium</a><br>
-<a href="login" > <button>Login</button></a>
-<a href="playSong"><button> Listen Song</button></a>
-
+<header class="container">
+         <div class="page-header">
+            <div class="logo">
+                <a href="index">TuneHub</a>
+            </div>
+            
+            <ul>
+                <li><a href="index" class="active" >🏠Home</a></li>
+                 <li><a href="logout" > Logout</a></li>
+            </ul>
+        </div>
+</header>
+	<div class="sidebar">
+            <h3>Admin Home</h3>
+            <a href="index">🏠Home</a>
+            <a href="viewSong" class="active">👀 View Songs</a>
+        <a href="viewPlaylist">📜 View Playlists</a>
+        <a href="newSong">➕ Add a Song</a>
+        <a href="createPlaylist">🎧 Create a Playlist</a>
+        </div>
+	<div th:unless="${isPrimium}" class="non-premium">
+		<a href="pay"> <button>Get Premium</button></a><br> 
+		<a href="Logout"><button>
+				Logout</button></a>
+	</div>
+	<section>
+	<div th:if="${isPrimium}" class="premium">
+		
+		 <div class="song-list" th:each="song : ${songs}">
+            <div class="song-card">
+                <h2 class="song-name" th:text="${song.name}"></h2>
+                <p class="song-artist" th:text="${song.artist}"></p>
+                <p class="song-genre" th:text="${song.genre}"></p>
+                <div class="song-player">
+                    <audio controls>
+                        <source th:src="${song.link}" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
 </body>
 </html>
