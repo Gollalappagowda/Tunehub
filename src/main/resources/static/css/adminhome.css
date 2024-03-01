@@ -52,6 +52,7 @@ ul li a {
 }
 
 .container1 {
+	
 	display:flex;
     width: 92.5%;
     margin: 20px auto;
@@ -59,12 +60,12 @@ ul li a {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
-    height:80vh;
+    height:90vh;
     margin-top: 10px;
 }
 
 .admin {
-	
+	position:relative;
     padding: 20px;
     border-radius: 8px;
 }

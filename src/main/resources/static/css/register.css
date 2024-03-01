@@ -4,15 +4,13 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-image:url(https://img.freepik.com/premium-photo/black-background-wallpaper_764067-179.jpg);
-    background-position:center;
+    background: hsl(309.07deg 62.32% 27.06%);
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     flex-direction: column;
 }
-
 .container {
 
 	width: 70%;
@@ -22,13 +20,13 @@ body {
 	border-radius: 10rem;
 	margin-bottom: -100px;
 }
-
 .page-header {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 0 20px;
-	overflow: hidden;
+    display: flex;
+    margin-bottom: 10px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    overflow: hidden;
 }
 
 .logo a {
@@ -94,6 +92,7 @@ input, textarea {
 
 input[type=radio] {
 	width: 4%;
+	cursor: pointer;
 }
 
 button {
@@ -104,14 +103,14 @@ button {
 }
 
 button {
-	background-color: #333;
-	color: #fff;
+	 background: hsl(309.07deg 62.32% 27.06%);
+	color: black;
 	cursor: pointer;
 	font-size: 16px;
 }
 
 button:hover {
-	background-color: #555;
+	background-color: white;
 }
 
 p {

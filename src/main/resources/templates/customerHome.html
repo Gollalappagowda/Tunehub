@@ -20,8 +20,9 @@
             </ul>
         </div>
 </header>
+<div class="hello">
 	<div class="sidebar">
-            <h3>Admin Home</h3>
+            
             <a href="index">🏠Home</a>
             <a href="viewSong" class="active">👀 View Songs</a>
         <a href="viewPlaylist">📜 View Playlists</a>
@@ -34,7 +35,7 @@
 				Logout</button></a>
 	</div>
 	<section>
-	<div th:if="${isPrimium}" class="premium">
+	<div th:if="${isPrimium}" class="container1">
 		
 		 <div class="song-list" th:each="song : ${songs}">
             <div class="song-card">
@@ -50,5 +51,6 @@
         </div>
     </div>
     </section>
+    </div>
 </body>
 </html>

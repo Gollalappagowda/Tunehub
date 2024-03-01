@@ -9,6 +9,9 @@ body {
     min-height: 100vh;
     flex-direction: column;
 }
+h2{
+	text-align: center;
+}
 
 .container {
     width: 27%;
